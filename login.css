@@ -1,0 +1,155 @@
+html, body {
+    overflow-y: hidden;
+    background-color: #c3ddf2;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+textarea::placeholder, input::placeholder{
+    color: rgba(255, 255, 255, 0.849);
+    text-align: center;
+}
+
+.link:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+@media (orientation: landscape) {
+    .mainLogo
+    {
+        width: 50vh;
+    }
+    .mainVerContainer
+    {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        height: 80%;
+        width: 100%;
+    }
+    input
+    {
+        font-family: odin;
+        font-size: 3.5vh;
+        background-color: #88b8f1;
+        color: white;
+        padding: 2vh;
+        border: 0;
+        border-radius: 10vh;;
+        text-align: center;
+    }   
+    button
+    {
+        font-family: happy;
+        font-size: 3vh;
+        background-color: #ed6b95;
+        color: white;
+        padding: 2vh 4vh 2vh 4vh;
+        border: 0;
+        border-radius: 10vh;
+        text-align: center;
+    }    
+    p
+    {
+        color: #2f63a3;
+        font-size: 3.4vh;
+    }
+    .link
+    {
+        color: #ed6b95;
+    }
+    .error
+    {
+        color: #d3435b;
+        font-size: 3.4vh;
+    }
+    .success
+    {
+        color: #4d8bd8;
+        font-size: 3.4vh;
+    }
+}
+
+@media (orientation: portrait) {
+    .mainLogo
+    {
+        width: 65vw;
+    }
+    .mainVerContainer
+    {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        height: 60%;
+        width: 100%;
+
+        position: relative;
+        bottom: 10vw;
+    }
+    input
+    {
+        font-family: odin;
+        font-size: 4.4vw;
+        background-color: #88b8f1;
+        color: white;
+        padding: 3vw;
+        border: 0;
+        border-radius: 10vw;;
+        text-align: center;
+    }   
+    button
+    {
+        font-family: happy;
+        font-size: 4vw;
+        background-color: #ed6b95;
+        color: white;
+        padding: 2vw 4vw 2vw 4vw;
+        border: 0;
+        border-radius: 10vw;;
+        text-align: center;
+    }
+    p
+    {
+        color: #2f63a3;
+        font-size: 4vw;
+    }
+    .link
+    {
+        color: #ed6b95;
+    }
+    .error
+    {
+        color: #d3435b;
+        font-size: 4vw;
+    }
+    .success
+    {
+        color: #4d8bd8;
+        font-size: 4vw;
+    }
+    #cd1
+    {
+        position: absolute;
+        top: 10vw;
+        right: -5vw;
+        width: 20vw;
+    }
+    #cd2
+    {
+        position: absolute;
+        top: 80vw;
+        left: -10vw;
+        width: 20vw;
+    }
+    #cd3
+    {
+        position: absolute;
+        bottom: 15vw;
+        right: 19vw;
+        width: 20vw;
+    }
+}

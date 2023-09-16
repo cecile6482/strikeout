@@ -1,0 +1,152 @@
+@font-face {
+    font-family: happy;
+    src: url(/bunnyBop/resources/fonts/Happy\ School.ttf);
+}
+
+@font-face {
+    font-family: odin;
+    src: url(/bunnyBop/resources/fonts/Odin.otf);
+}
+
+@font-face {
+    font-family: odinbold;
+    src: url(/bunnyBop/resources/fonts/odin\ Bold.ttf);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    font-family: "odin";
+    background-color: #ffabc0;
+    overflow-x: hidden;
+}
+
+@media (hover: hover) {
+    button:hover {
+        opacity: .5;
+        cursor: pointer;
+    }
+    .navigationIcon:hover {
+        opacity: .5;
+        cursor: pointer;
+    }
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-color: #b9dbff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.horContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+}
+
+.verContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-area: overlap;
+}
+
+@media (orientation: landscape) {
+    html, body {
+        background-image: url('resources/images/horBackground.PNG');
+        background-size: cover;
+    }
+    .header {
+        background-color: #ffabc0;
+        height: 20vh;
+        width: 100%;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .pageTitle
+    {
+        text-align: center;
+        font-size: 7vh;
+        color: white;
+    }
+    .footer
+    {
+        background-color: #ffabc0;
+        height: 15vh;
+        width:100%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    .navigationIcon
+    {
+        width: 8vh;
+    }
+}
+
+@media (orientation: portrait) {
+    html, body {
+        background-image: url('resources/images/verBackground.PNG');
+        background-size: cover;
+    }
+    .header {
+        background-color: #ffabc0;
+        height: 15vw;
+        width:100%;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .pageTitle
+    {
+        text-align: center;
+        font-size: 6vw;
+        color: white;
+
+        position: relative;
+        top: .5vw;
+    }
+    .footer
+    {
+        background-color: #ffabc0;
+        height: 12vw;
+        width:100%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; 
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    .navigationIcon
+    {
+        width: 7vw;
+    }
+}
