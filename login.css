@@ -1,155 +1,132 @@
+@font-face {
+    font-family: wild;
+    src: url(/strikeout/resources/fonts/wild.ttf);
+}
+
 html, body {
     overflow-y: hidden;
-    background-color: #c3ddf2;
 }
 
 textarea:focus, input:focus{
     outline: none;
 }
 
-textarea::placeholder, input::placeholder{
-    color: rgba(255, 255, 255, 0.849);
-    text-align: center;
-}
-
 .link:hover{
     cursor: pointer;
     opacity: .5;
 }
-@media (orientation: landscape) {
-    .mainLogo
+@media (orientation: landscape) 
+{
+    #menuCircle
     {
-        width: 50vh;
+        width: 70vh;
+        grid-area: overlap;
     }
-    .mainVerContainer
+    .loginContainer
     {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        height: 80%;
-        width: 100%;
+        grid-area: overlap;
+        justify-self: center;
+        align-self: center;
+
+        position: relative;
+        bottom: 3vh;
+    }
+    .strikeoutTitle
+    {
+        font-family: wild;
+        font-size: 7vh;
+        color: #fbf2ec;
+        letter-spacing: 1vh;
     }
     input
     {
-        font-family: odin;
-        font-size: 3.5vh;
-        background-color: #88b8f1;
-        color: white;
-        padding: 2vh;
-        border: 0;
-        border-radius: 10vh;;
+        background-color: #fbf2ec;
         text-align: center;
-    }   
+        font-family: odin;
+        padding: 1vh;
+        border-radius: 5vh;
+        border: 0px;
+    }
     button
     {
-        font-family: happy;
-        font-size: 3vh;
-        background-color: #ed6b95;
-        color: white;
-        padding: 2vh 4vh 2vh 4vh;
-        border: 0;
-        border-radius: 10vh;
+        background-color: #fbf2ec;
         text-align: center;
-    }    
-    p
-    {
-        color: #2f63a3;
-        font-size: 3.4vh;
-    }
-    .link
-    {
-        color: #ed6b95;
-    }
-    .error
-    {
-        color: #d3435b;
-        font-size: 3.4vh;
-    }
-    .success
-    {
-        color: #4d8bd8;
-        font-size: 3.4vh;
+        font-family: odin;
+        padding: 1vh 3vh 1vh 3vh;
+        border-radius: 5vh;
+        border: 0px;
     }
 }
 
-@media (orientation: portrait) {
-    .mainLogo
+@media (orientation: portrait) 
+{
+    #menuCircle
     {
-        width: 65vw;
+        width: 85vw;
+        grid-area: overlap;
     }
-    .mainVerContainer
+    .loginContainer
     {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        height: 60%;
-        width: 100%;
+        grid-area: overlap;
+        justify-self: center;
+        align-self: center;
 
         position: relative;
-        bottom: 10vw;
+        bottom: 3vw;
+    }
+    .strikeoutTitle
+    {
+        font-family: wild;
+        font-size: 7vw;
+        color: #fbf2ec;
+        letter-spacing: 1vw;
     }
     input
     {
-        font-family: odin;
-        font-size: 4.4vw;
-        background-color: #88b8f1;
-        color: white;
-        padding: 3vw;
-        border: 0;
-        border-radius: 10vw;;
+        background-color: #fbf2ec;
         text-align: center;
-    }   
+        font-family: odin;
+        padding: 1vw;
+        border-radius: 5vw;
+        border: 0px;
+    }
     button
     {
-        font-family: happy;
-        font-size: 4vw;
-        background-color: #ed6b95;
-        color: white;
-        padding: 2vw 4vw 2vw 4vw;
-        border: 0;
-        border-radius: 10vw;;
+        background-color: #fbf2ec;
         text-align: center;
+        font-family: odin;
+        padding: 1vw 3vw 1vw 3vw;
+        border-radius: 5vw;
+        border: 0px;
+    }
+    #star1
+    {
+        width: 6vw;
+        position: fixed;
+        top: 15vw;
+        right: 15vw;
+    }
+    #star2
+    {
+        width: 6vw;
+        position: fixed;
+        bottom: 30vw;
+        right: 30vw;
+    }
+    #star3
+    {
+        width: 6vw;
+        position: fixed;
+        top: 40vw;
+        left: 12vw;
     }
     p
     {
-        color: #2f63a3;
-        font-size: 4vw;
+        font-size: 2.6vw;
+        color: #fbf2ec;
     }
     .link
     {
-        color: #ed6b95;
-    }
-    .error
-    {
-        color: #d3435b;
-        font-size: 4vw;
-    }
-    .success
-    {
-        color: #4d8bd8;
-        font-size: 4vw;
-    }
-    #cd1
-    {
-        position: absolute;
-        top: 10vw;
-        right: -5vw;
-        width: 20vw;
-    }
-    #cd2
-    {
-        position: absolute;
-        top: 80vw;
-        left: -10vw;
-        width: 20vw;
-    }
-    #cd3
-    {
-        position: absolute;
-        bottom: 15vw;
-        right: 19vw;
-        width: 20vw;
-    }
+        color: #ffc9e6;
+    }   
 }

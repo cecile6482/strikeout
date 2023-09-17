@@ -1,6 +1,6 @@
 <?php
 include("connection.php"); //Database connection
-include("validateLogin.php"); //Validate Login
+include("validate.php"); //Validate Login
 ?>
 
 <!DOCTYPE html>
@@ -16,52 +16,63 @@ include("validateLogin.php"); //Validate Login
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="animations.css">
 
-    <!-- Import jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
     <!-- External Javascript -->
     <script src="login.js"></script>
 
-    <title>bunnyBop - Log In</title>
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>strikeout - Log In</title>
 </head>
 <body onload = 'loginOnload()'>
-    <div class = 'verContainer'>
-        <div class = 'mainVerContainer'>
-            <img class = 'mainLogo' src = 'resources/images/bunnyBopLogo.png'>
-
-            <!-- Login Form -->
-            <form id = 'loginForm' name="form" method="post" action="validateLogin.php">
-                <div class="verContainer">
-                    <input type="text" id="user" name="user" placeholder="enter username" autocomplete="off" maxlength="15"> 
-                    <br>
-                    <input type="text" id="pass" name="pass" placeholder="enter password" style="-webkit-text-security: square;" autocomplete="off">
-                    <br>
-                    <button type = 'submit' id="loginButton" name="login"> log in </button>
+    <div class = 'horContainer'>
+        <div class = 'verContainer'>
+            <!-- Main Circle -->
+            <div class = 'gridContainer'>
+                <img id = 'menuCircle' src = "resources/images/menuCircle.png">
+                <!-- Login Container -->
+                <div class = 'loginContainer'>
+                    <div class = 'verContainer'>
+                        <!-- Title -->
+                        <h1 class = 'strikeoutTitle'> strikeout </h1>
+                        <!-- Login Form -->
+                        <form id = 'loginForm' name="form" method="post" action="validate.php">
+                            <div class="verContainer">
+                                <input type="text" id="user" name="user" placeholder="enter username" autocomplete="off" maxlength="15"> 
+                                <br>
+                                <input type="text" id="pass" name="pass" placeholder="enter password" style="-webkit-text-security: square;" autocomplete="off">
+                                <br>
+                                <button type = 'submit' id="loginButton" name="login"> log in </button>
+                            </div>
+                            <br>
+                        </form>
+                        <!-- Create Account Option -->
+                        <p id = 'createAccountOption' > Not a user? <span class = 'link' onclick = 'switchToSignup()'>Create an account.</span> </p> 
+                        
+                        <!-- Signup Form -->
+                        <form id = 'signupForm' name="form" method="post" action="validate.php">
+                            <div class="verContainer">
+                                <input type="text" id="user" name="user" placeholder="create a username" autocomplete="off" maxlength="15"> 
+                                <br>
+                                <input type="text" id="pass" name="pass" placeholder="create a password" style="-webkit-text-security: square;" autocomplete="off">
+                                <br>
+                                <button type = 'submit' id="signupButton" name="signup"> sign up </button>
+                            </div>
+                            <br>
+                        </form>
+                        <!-- Create Account Option -->
+                        <p id = 'loginOption' > Already a user? <span class = 'link' onclick = 'switchToLogin()'>Log in.</span> </p> 
+                    </div>
                 </div>
-            </form>
-
-            <!-- Create Account Option -->
-            <p id = 'createAccountOpion' > Not a user? <span class = 'link' onclick = 'moveToSignUp()'>Create an account.</span> </p> 
-
-            <!-- Success Message: Account Created -->
-            <?php 
-                    if (isset($_GET['accountCreated']) && $_GET['accountCreated'] == 1) { 
-                        echo "<p class = 'success'> Account created. </p>";
-                    }
-                ?>
-            <!-- Error Message: Wrong credientials -->
-            <?php 
-                    if (isset($_GET['loginerror']) && $_GET['loginerror'] == 1) { 
-                        echo "<p class = 'error'> Credentials not correct, try again. </p>";
-                    }
-                ?>
+            </div>
         </div>
     </div>
 
-    <!-- CD Animations -->
-    <img id = 'cd1' src = 'resources/images/cd.png'>
-    <img id = 'cd2' src = 'resources/images/cd.png'>
-    <img id = 'cd3' src = 'resources/images/cd.png'>
+    <img id = 'star1' src = 'resources/images/star.png'>
+    <img id = 'star2' src = 'resources/images/star.png'>
+    <img id = 'star3' src = 'resources/images/star.png'>
+    
+    
 
 </body>
 
