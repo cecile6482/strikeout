@@ -1,0 +1,155 @@
+@font-face {
+    font-family: wild;
+    src: url(/strikeout/resources/fonts/wild.ttf);
+}
+
+html, body {
+    overflow-y: hidden;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.more:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.listName:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.checkbox:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.newTask:hover{
+    cursor: pointer;
+    color:#414245;
+}
+
+@media (orientation: landscape) 
+{
+    h1
+    {
+
+    }
+}
+
+@media (orientation: portrait) 
+{
+    h1
+    {
+        font-size: 7vw;
+        color: #fbf2ec;
+        font-family: happy;
+        letter-spacing: .5vw;
+        padding: 3vw 7vw 3vw 7vw;
+    }
+    .perListContainer
+    {
+        background-color: #fbf2ecaa;
+        width: 90%;
+        height: 25vw;
+        margin: 0 0 5vw 0;
+        border-radius: 10vw;
+    }
+    .listName
+    {
+        font-size: 6vw;
+        font-family: odin;
+        color: #414245;
+        background-color: #41424500;
+        border: 0;
+    }
+    .listNameVerContainer 
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: relative;
+        left: 7vw;
+        top: 4vw;
+    }
+    .listItemCount
+    {
+        font-size: 3.5vw;
+        color: #4142459d;
+        position: relative;
+        bottom: 2vw;
+        left: 2vw;
+
+    }
+    .more
+    {
+        width: 6vw;
+        position: absolute;
+        top: 3vw;
+        right:18vw;
+    }
+    
+    .listNameTitle
+    {
+        text-align: center;
+    }
+    .checkbox
+    {
+        width: 6vw;
+        height: 6vw;
+    }
+    .checkboxContainer
+    {
+        display: flex;
+        justify-content: center; /* Adjusted from justify-items */
+        align-items: center; /* Added to vertically center */
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        margin: 0 3vw 0 6vw;
+    }
+    .itemContainer
+    {
+        background-color: #fbf2ecaa;
+        width: 90%;
+        height: auto;
+        margin: 0 0 5vw 0;
+        border-radius: 5vw;
+
+        display: flex;
+    }
+    .itemContainerDone
+    {
+        background-color: #fbf2ec42;
+        width: 90%;
+        height: auto;
+        margin: 0 0 5vw 0;
+        border-radius: 5vw;
+
+        display: flex;
+    }
+    .item
+    {
+        font-size: 4.5vw;
+        font-family: odin;
+        color: #414245;
+        background-color: #41424500;
+        border: 0;
+    }
+    .newTaskContainer
+    {
+        background-color: #ffd0e177;
+        width: 90%;
+        height: auto;
+        margin: 0 0 5vw 0;
+        border-radius: 5vw;
+
+        display: flex;
+    }
+    .newTask
+    {
+        text-align: center;
+        font-size: 4vw;
+        color:#414245a7
+
+    }
+}

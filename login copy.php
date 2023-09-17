@@ -53,7 +53,7 @@ include("validateLogin.php"); //Validate Login
             <!-- Error Message: Wrong credientials -->
             <?php 
                     if (isset($_GET['loginerror']) && $_GET['loginerror'] == 1) { 
-                        echo "<p class = 'error'> Credentials not correct, try again. </p>";
+                        echo "<p class = 'error'> Invalid login, try again. </p>";
                     }
                 ?>
         </div>

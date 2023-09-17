@@ -10,30 +10,33 @@ function loginOnload()
     $('#loginOption').hide();
 
     //Get current URL
-    //var currentURL = window.location.href;
+    var currentURL = window.location.href;
 
-    //var accountCreatedString = "accountCreated";
-    //var loginErrorString = "loginerror";
+    var signupError = "signuperror";
+    var blankCredentialsError = "blankCredentials";
    
-    //If error/success messages are not present, animate
-    if (currentURL.indexOf(accountCreatedString) === -1 && currentURL.indexOf(loginErrorString) === -1)
+    //If error messages are present, load page on signup
+    if (!(currentURL.indexOf(signupError) === -1 && currentURL.indexOf(blankCredentialsError) === -1))
     {
-        $('#user').addClass('slide-in-left');
-        $('#pass').addClass('slide-in-right');
-        $('#loginButton').addClass('slide-in-left');
-        $('#createAccountOpion').addClass('slide-in-right');
-        
+        //Hide log in form
+        $('#loginForm').hide();
+        $('#createAccountOption').hide();
         setTimeout(() => {
-            $('#user').removeClass('slide-in-left');
-            $('#pass').removeClass('slide-in-right');
-            $('#loginButton').removeClass('slide-in-left');
-            $('#createAccountOpion').removeClass('slide-in-right');
-        }, "500");
+            //Show sign up form
+            $('#signupForm').show();
+            $('#loginOption').show();
+        }, 450);
     }
 }
 
 function switchToSignup()
 {
+    //Hide login error if needed
+    if ($("#loginError").is(":visible")) 
+    {
+        $("#loginError").hide();
+    }
+
     //Hide log in form
     $('#loginForm').addClass('flip-out-hor-top');
     $('#createAccountOption').addClass('flip-out-hor-top');
@@ -54,6 +57,10 @@ function switchToSignup()
 }
 
 function switchToLogin() {
+    if ($("#signupError").is(":visible")) 
+    {
+        $("#signupError").hide();
+    }
     //Hide sign up form
     $('#signupForm').addClass('flip-out-hor-top');
     $('#loginOption').addClass('flip-out-hor-top');

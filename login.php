@@ -65,6 +65,24 @@ include("validate.php"); //Validate Login
                     </div>
                 </div>
             </div>
+            <!-- Log In Error Message: Invalid Login -->
+            <?php 
+                if (isset($_GET['loginerror']) && $_GET['loginerror'] == 1) { 
+                    echo "<p id = 'loginError' class = 'error'> ☆ Invalid login, try again ☆ </p>";
+                }
+            ?>
+            <!-- Sign up Error Message: Blank Credentials -->
+            <?php 
+                if (isset($_GET['blankCredentials']) && $_GET['blankCredentials'] == 1) { 
+                    echo "<p id = 'signupError' class = 'error'> ☆ Credentials cannot be blank, try again ☆ </p>";
+                }
+            ?>
+            <!-- Sign up Error Message: Username Already Taken -->
+            <?php 
+                if (isset($_GET['signuperror']) && $_GET['signuperror'] == 1) { 
+                    echo "<p id = 'signupError' class = 'error'> ☆ Username already taken, try again ☆ </p>";
+                }
+            ?>
         </div>
     </div>
 

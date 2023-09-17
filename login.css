@@ -19,7 +19,7 @@ textarea:focus, input:focus{
 {
     #menuCircle
     {
-        width: 70vh;
+        width: 80vh;
         grid-area: overlap;
     }
     .loginContainer
@@ -56,13 +56,51 @@ textarea:focus, input:focus{
         border-radius: 5vh;
         border: 0px;
     }
+    
+    #star1
+    {
+        width: 6vh;
+        position: fixed;
+        top: 15vh;
+        right: 15vh;
+    }
+    #star2
+    {
+        width: 6vh;
+        position: fixed;
+        bottom: 15vh;
+        right: 30vh;
+    }
+    #star3
+    {
+        width: 6vh;
+        position: fixed;
+        top: 30vh;
+        left: 12vh;
+    }
+    p
+    {
+        font-size: 2.6vh;
+        color: #fbf2ec;
+    }
+    .link
+    {
+        color: #ffc9e6;
+    }   
+    .error
+    {
+        font-size: 2.2vh;
+        color: #ffa0c2;
+        position: fixed;
+        bottom: 4vh;
+    }
 }
 
 @media (orientation: portrait) 
 {
     #menuCircle
     {
-        width: 85vw;
+        width: 90vw;
         grid-area: overlap;
     }
     .loginContainer
@@ -72,7 +110,7 @@ textarea:focus, input:focus{
         align-self: center;
 
         position: relative;
-        bottom: 3vw;
+        bottom: 2.5vw;
     }
     .strikeoutTitle
     {
@@ -129,4 +167,11 @@ textarea:focus, input:focus{
     {
         color: #ffc9e6;
     }   
+    .error
+    {
+        font-size: 2.6vw;
+        color: #ffa0c2;
+        position: fixed;
+        bottom: 23vh;
+    }
 }
