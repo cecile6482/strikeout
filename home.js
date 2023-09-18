@@ -26,27 +26,140 @@ function markAsIncomplete(itemID, listID) {
 }
 
 
-function openList(event) {
+function openList(listID) {
     $('.hello').addClass('slide-out-left');
     $('.listContainer').addClass('slide-out-left');
+    $('.settings').addClass('slide-out-left');
 
-     // Wait for animation to complete (adjust time as needed)
-     setTimeout(function() {
-        var formData = $('#openList').serialize(); // Serialize the form data
-        $('.hello').hide();
-        $('.listContainer').hide();
-        $.ajax({
-            type: 'POST',
-            url: 'home.php',
-            data: formData,
-            success: function(response) {
-                console.log(response) 
-                $('.openedList').html(response);
+    setTimeout(function() {
+        $('.hello').removeClass('slide-out-left').hide();
+        $('.listContainer').removeClass('slide-out-left').hide();
+        $('.settings').removeClass('slide-out-left').hide();
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("openedList").innerHTML = this.responseText;
+                
+                // Add the slide-in-right class and show the element
+                $('#openedList').addClass('slide-in-right').show();
             }
-        });
-    }, 1000); // Adjust the time (in milliseconds) as needed
+        };
+        xhttp.open("GET", "getList.php?listID=" + listID, true);
+        xhttp.send();
+    }, 1000);
+    setTimeout(function() {
+        $('#openedList').removeClass('slide-in-right');
+    }, 1600);
+}
 
-    event.preventDefault(); // Prevent default button click behavior
+function backToLists(){
+    $('#openedList').addClass('slide-out-right');
+
+    setTimeout(function() {
+        $('.hello').addClass('slide-in-left').show();
+        $('.settings').addClass('slide-in-left').show();
+        $('.listContainer').addClass('slide-in-left').show();
+        $('#openedList').removeClass('slide-out-right').hide();
+    }, 500);
+    setTimeout(function() {
+        $('.hello').removeClass('slide-in-left');
+        $('.listContainer').removeClass('slide-in-left');
+    }, 1000);
+}
+
+function homeOnload ()
+{
+    $('.addnewListAll').hide();
+    $('.addNewTaskAll').hide();
+    $('.logout').hide();
+    $('.solidCover').show();
+    setTimeout(function() {
+        $('.solidCover').addClass('fade-out');
+    }, 2000);
+    setTimeout(function() {
+        $('.solidCover').removeClass('fade-out').hide();
+    }, 4000);
+    
+    
+}
+
+function openAddList()
+{
+    $('.addnewListAll').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.addnewListAll').removeClass('fade-in');
+    }, 1000);
+}
+function closeAddList()
+{
+    $('.addnewListAll').addClass('fade-out');
+    setTimeout(function() {
+        $('.addnewListAll').removeClass('fade-out').hide();
+    }, 1000);
+}
+
+function openAddTask()
+{
+    $('.addNewTaskAll').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.addNewTaskAll').removeClass('fade-in');
+    }, 1000);
+}
+function closeAddTask()
+{
+    $('.addNewTaskAll').addClass('fade-out');
+    setTimeout(function() {
+        $('.addNewTaskAll').removeClass('fade-out').hide();
+    }, 1000);
 }
 
 
+function addNewList()
+{
+    var listName = $('input[name="listName"]').val(); // Get the entered list name
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("listContainer").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "addList.php?listName=" + listName, true);
+    xhttp.send();
+    closeAddList();
+};
+
+function addNewTask()
+{
+    var taskMessage = $('input[name="taskMessage"]').val(); // Get the entered list name
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("taskList").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "addTask.php?taskMessage=" + taskMessage, true);
+    xhttp.send();
+    closeAddTask();
+};
+
+function logout()
+{
+    window.location.href = 'login.php'
+}
+
+function openSettings()
+{
+    $('.logout').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.logout').removeClass('fade-in');
+    }, 1000);
+}
+function closeSettings()
+{
+    $('.logout').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.logout').removeClass('fade-in');
+    }, 1000);
+}

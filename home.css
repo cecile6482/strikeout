@@ -27,6 +27,18 @@ textarea:focus, input:focus{
     cursor: pointer;
     color:#414245;
 }
+.backButton:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.exit:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+.settings:hover{
+    cursor: pointer;
+    opacity: .5;
+}
 
 @media (orientation: landscape) 
 {
@@ -45,6 +57,13 @@ textarea:focus, input:focus{
         font-family: happy;
         letter-spacing: .5vw;
         padding: 3vw 7vw 3vw 7vw;
+    }
+    .settings
+    {
+        width: 9vw;
+        position: absolute;
+        top: 6vw;
+        right: 6vw;
     }
     .perListContainer
     {
@@ -69,14 +88,14 @@ textarea:focus, input:focus{
         flex-direction: column;
         position: relative;
         left: 7vw;
-        top: 4vw;
+        top: .5vw;
     }
     .listItemCount
     {
         font-size: 3.5vw;
         color: #4142459d;
         position: relative;
-        bottom: 2vw;
+        bottom: 8vw;
         left: 2vw;
 
     }
@@ -85,7 +104,7 @@ textarea:focus, input:focus{
         width: 6vw;
         position: absolute;
         top: 3vw;
-        right:18vw;
+        right:16vw;
     }
     
     .listNameTitle
@@ -150,6 +169,52 @@ textarea:focus, input:focus{
         text-align: center;
         font-size: 4vw;
         color:#414245a7
+    }
+    .backButton
+    {
+        width: 9vw;
+        margin: 4vw 0 0 4vw;
+    }
+    .addNewMainCon
+    {
+        width: 80vw;
+        height: 50vw;
+        background-color: #dfb3ca;
+        border-radius: 10vw;
 
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+    .newListTitle
+    {
+        font-size: 5vw;
+        color:#414245a7
+    }
+    #enterListNameForm
+    {
+        position: relative;
+    }
+    .exit
+    {
+        width: 5vw;
+        position: relative;
+        bottom: 36vw;
+        left: 30vw;
+    }
+    .solidCover
+    {
+        width: 100%;
+        height: 100%;
+        background-color: #414245;
+        position: absolute;
+        top: 0;
+        left:0;
+        z-index: 900;
+    }
+    .loading
+    {
+        width: 40vw;
     }
 }

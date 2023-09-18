@@ -41,4 +41,11 @@
                     }
         echo "</div>";
     }
+    echo "<div class='horContainer' style = 'height: auto;'>";
+            echo "<div class='newTaskContainer'>";
+                echo "<div class='horContainer'>";
+                    echo "<p class = 'newTask'> new task+ </p>";
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";
 ?>
