@@ -70,7 +70,7 @@
                                     echo "Error fetching item count";
                                 }
 
-                                echo "<img class='more' src='resources/icons/more.png'>";
+                                echo "<img onclick = 'openEditList({$data['listID']})' class='editListIcon' src='resources/icons/edit.png'>";
                             echo "</div>";
                         echo "</div>";
                     echo "</div>";
@@ -135,6 +135,24 @@
                         <p class = 'newListTitle' > settings </p> 
                         <button onclick = 'logout()'>log out</button>
                         <img class = 'exit' onclick = 'closeSettings()'src = 'resources/icons/x.png'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit List Container -->
+            
+    <div class = 'editList'>
+        <div class = 'cover'>
+            <div class = 'verContainer'>
+                <div class = 'horContainer'>
+                    <div class = 'addNewMainCon'>
+                        <p class = 'newListTitle' > edit list </p> 
+                        <input type="text" name="updatedListName" placeholder="change list name" maxlength="20" required>
+                        <button onclick = 'changeListName()'>change</button>
+                        <img class = 'exit' onclick = 'closeEditList()'src = 'resources/icons/x.png'>
+                        <img class = 'deleteIcon' onclick = 'deleteList()'src = 'resources/icons/trash.png'>
                     </div>
                 </div>
             </div>

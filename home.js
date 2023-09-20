@@ -25,8 +25,9 @@ function markAsIncomplete(itemID, listID) {
     xhttp.send();
 }
 
-
+let currOpenedList
 function openList(listID) {
+    currOpenedList = listID;
     $('.hello').addClass('slide-out-left');
     $('.listContainer').addClass('slide-out-left');
     $('.settings').addClass('slide-out-left');
@@ -72,6 +73,7 @@ function homeOnload ()
 {
     $('.addnewListAll').hide();
     $('.addNewTaskAll').hide();
+    $('.editList').hide();
     $('.logout').hide();
     $('.solidCover').show();
     setTimeout(function() {
@@ -79,7 +81,7 @@ function homeOnload ()
     }, 2000);
     setTimeout(function() {
         $('.solidCover').removeClass('fade-out').hide();
-    }, 4000);
+    }, 2300);
     
     
 }
@@ -113,7 +115,6 @@ function closeAddTask()
         $('.addNewTaskAll').removeClass('fade-out').hide();
     }, 1000);
 }
-
 
 function addNewList()
 {
@@ -149,6 +150,7 @@ function logout()
     window.location.href = 'login.php'
 }
 
+//SETTINGS
 function openSettings()
 {
     $('.logout').addClass('fade-in').show();
@@ -163,3 +165,105 @@ function closeSettings()
         $('.logout').removeClass('fade-in');
     }, 1000);
 }
+
+//EDIT LIST
+let currListToEdit;
+function openEditList(listID)
+{
+    currListToEdit = listID;
+    $('.editList').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.editList').removeClass('fade-in');
+    }, 1000);
+}
+function closeEditList()
+{
+    $('.editList').addClass('fade-out');
+    setTimeout(function() {
+        $('.editList').removeClass('fade-out').hide();
+    }, 1000);
+}
+
+
+function changeListName()
+{
+    var listID = currListToEdit;
+    var newListName = $('input[name="updatedListName"]').val(); // Get the entered list name
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("listContainer").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "changeListName.php?newListName=" + newListName + "&listID=" + listID, true);
+    xhttp.send();
+    closeEditList();
+};
+
+//delete LIST
+function deleteList()
+{
+    var listID = currListToEdit;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("listContainer").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "deleteList.php?listID=" + listID, true);
+    xhttp.send();
+    closeEditList();
+};
+
+//EDIT TASK
+let currTaskToEdit;
+function openEditTask(taskID)
+{
+    currTaskToEdit = taskID;
+    $('.editTask').addClass('fade-in').show();
+    setTimeout(function() {
+        $('.editTask').removeClass('fade-in');
+    }, 1000);
+}
+function closeEditTask()
+{
+    $('.editTask').addClass('fade-out');
+    setTimeout(function() {
+        $('.editTask').removeClass('fade-out').hide();
+    }, 1000);
+}
+
+
+function changeTaskName()
+{
+    var taskID = currTaskToEdit;
+    var newTask = $('input[name="updatedTaskName"]').val(); // Get the entered Task name
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("openedList").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "changeTask.php?newTask=" + newTask + "&taskID=" + taskID  + "&currList=" + currOpenedList, true);
+    xhttp.send();
+    closeEditTask();
+};
+
+//delete Task
+function deleteTask()
+{
+    var taskID = currTaskToEdit;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("openedList").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "deleteTask.php?taskID=" + taskID + "&currList=" + currOpenedList, true);
+    xhttp.send();
+    closeEditTask();
+};
