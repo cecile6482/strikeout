@@ -26,9 +26,9 @@ A to do list web app
  <br>
 
  <div>
-    <img style = "width: 20vw; margin: 5vw;" src = "resources/thumbnails/menu.png">
-    <img style = "width: 20vw; margin: 5vw;" src = "resources/thumbnails/home.png">
-    <img style = "width: 20vw; margin: 5vw;" src = "resources/thumbnails/listView.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/menu.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/home.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/listView.png">
 </div>
  <br>
  
