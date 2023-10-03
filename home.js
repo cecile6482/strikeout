@@ -125,7 +125,7 @@ function addNewList()
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText); // Parse the JSON response
             if (response.status === "success") {
-                document.getElementById("listContainer").innerHTML = this.responseText;
+                document.getElementById("listContainer").innerHTML = response.html; // Use the parsed HTML
             } else {
                 alert("Erreur : " + response.message); // Display the error message
             }
