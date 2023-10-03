@@ -40,9 +40,10 @@
         <?php
             $username = $_SESSION['currUser'];
             $sql = "SELECT *
-                    FROM users
-                    INNER JOIN lists ON users.userID = lists.userID
-                    WHERE users.username = '$username';";
+        FROM users
+        INNER JOIN lists ON users.id = lists.user_id
+        WHERE users.username = '$username';";
+
             $result = mysqli_query($conn, $sql);
             
             if(mysqli_num_rows($result) == 0) {

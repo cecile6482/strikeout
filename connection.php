@@ -1,10 +1,11 @@
 <?php
     $servername = "localhost";
     $dbusername = "root";
-    $dbpassword = "";
+    $dbpassword = "root";
     $dbname = "strikeout";
+    $port = 8889;
 
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname, $port);
 
     if ($conn->connect_error) {
         die("Connection failed" . $conn->connect_error);
