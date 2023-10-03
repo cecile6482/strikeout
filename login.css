@@ -47,21 +47,21 @@ textarea:focus, input:focus{
     }
     #star1
     {
-        width: 6vh;
+        width: 16vh;
         position: fixed;
         top: 15vh;
         right: 15vh;
     }
     #star2
     {
-        width: 6vh;
+        width: 16vh;
         position: fixed;
         bottom: 15vh;
         right: 30vh;
     }
     #star3
     {
-        width: 6vh;
+        width: 16vh;
         position: fixed;
         top: 30vh;
         left: 12vh;

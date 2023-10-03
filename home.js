@@ -123,13 +123,20 @@ function addNewList()
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("listContainer").innerHTML = this.responseText;
+            var response = JSON.parse(this.responseText); // Parse the JSON response
+            if (response.status === "success") {
+                document.getElementById("listContainer").innerHTML = this.responseText;
+            } else {
+                alert("Erreur : " + response.message); // Display the error message
+            }
         }
     };
-    xhttp.open("GET", "addList.php?listName=" + listName, true);
-    xhttp.send();
+    xhttp.open("POST", "addList.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("listName=" + listName);
     closeAddList();
 };
+
 
 function addNewTask()
 {
@@ -137,6 +144,7 @@ function addNewTask()
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             document.getElementById("taskList").innerHTML = this.responseText;
         }
     };

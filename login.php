@@ -30,7 +30,7 @@ include("validate.php"); //Validate Login
             <div>
                 <!-- Main Circle -->
                 <div class = 'gridContainer'>
-                    <img id = 'menuCircle' src = "resources/images/menuCircle.png">
+                    <img id = 'menuCircle' src = "resources/images/menuCircleorg.png">
                     <!-- Login Container -->
                     <div class = 'loginContainer'>
                         <div class = 'verContainer'>
@@ -90,9 +90,9 @@ include("validate.php"); //Validate Login
         </div>
     </div>
 
-    <img id = 'star1' src = 'resources/images/star.png'>
-    <img id = 'star2' src = 'resources/images/star.png'>
-    <img id = 'star3' src = 'resources/images/star.png'>
+    <img id = 'star1' src = 'resources/images/pinorange.png'>
+    <img id = 'star2' src = 'resources/images/pinorange.png'>
+    <img id = 'star3' src = 'resources/images/pinorange.png'>
     
     
 
