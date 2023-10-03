@@ -41,7 +41,7 @@ textarea:focus, input:focus{
     .strikeoutTitle
     {
         font-family: wild;
-        font-size: 7vh;
+        font-size: 5vh;
         color: #fbf2ec;
         letter-spacing: 1vh;
     }

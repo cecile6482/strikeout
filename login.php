@@ -35,7 +35,7 @@ include("validate.php"); //Validate Login
                     <div class = 'loginContainer'>
                         <div class = 'verContainer'>
                             <!-- Title -->
-                            <h1 class = 'strikeoutTitle'> strikeout </h1>
+                            <h1 class = 'strikeoutTitle'> barre/coche </h1>
                             <!-- Login Form -->
                             <form id = 'loginForm' name="form" method="post" action="validate.php">
                                 <div class="verContainer">
