@@ -2,14 +2,16 @@
 include("connection.php");
 session_start();
 
+
 $listName = $_GET['listName'];
 
-$nameQuery = "SELECT * FROM users WHERE username = '{$_SESSION['currUser']}'";
+$nameQuery = "SELECT id FROM users WHERE username = '{$_SESSION['currUser']}'";
 $nameResult = mysqli_query($conn, $nameQuery);
 $nameRow = mysqli_fetch_array($nameResult, MYSQLI_ASSOC);
 
+
 // Insert the list name into the database
-$insertQuery = "INSERT INTO `lists` (`listID`, `userID`, `listName`, `dateCreated`) VALUES (NULL, '{$nameRow['userID']}', '$listName' , NOW())";
+$insertQuery = "INSERT INTO `lists` (`listID`, `user_id`, `listName`, `dateCreated`) VALUES (NULL, '{$nameRow['id']}', '$listName' , NOW())";
 mysqli_query($conn, $insertQuery);
 
 $username = $_SESSION['currUser'];
